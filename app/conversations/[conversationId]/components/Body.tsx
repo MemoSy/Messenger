@@ -45,11 +45,23 @@ const Body: React.FC<BodyProps> = ({ initialMassages = [] }) => {
       bottomRef?.current?.scrollIntoView()
     }
 
+    const updateMassageHandler = (newMessage: FullMessageType) => {
+      setMassages((current) => current.map((currentMessage) => {
+        if (currentMessage.id === newMessage.id) {
+          return newMessage;
+        }
+  
+        return currentMessage;
+      }))
+    };
+
     pusherClient.bind('messages:new', massageHandler)
+    pusherClient.bind('messages:update', updateMassageHandler)
 
     return () => {
       pusherClient.unsubscribe(conversationId)
       pusherClient.unbind('messages:new', massageHandler)
+      pusherClient.unbind('messages:update', updateMassageHandler)
     }
   }, [conversationId]);
 
