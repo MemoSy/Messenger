@@ -48,7 +48,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         if (currentConversation.id === conversation.id) {
           return {
             ...currentConversation,
-            messages: conversation.messages
+            messages: conversation.massages
           };
         }
 
@@ -126,7 +126,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         </div>
       </aside>
     </>
-  );
+   );
 }
  
 export default ConversationList;

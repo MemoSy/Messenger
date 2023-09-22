@@ -30,10 +30,10 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   }, [data, router]);
 
   const lastMessage = useMemo(() => {
-    const messages = data.messages || [];
+    const messages = data.massages || [];
 
     return messages[messages.length - 1];
-  }, [data.messages]);
+  }, [data.massages]);
 
   const userEmail = useMemo(() => session.data?.user?.email,
   [session.data?.user?.email]);

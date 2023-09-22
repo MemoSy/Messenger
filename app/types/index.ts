@@ -7,5 +7,5 @@ export type FullMessageType = Massage & {
 
 export type FullConversationType = Conversation & { 
   users: User[]; 
-  messages: FullMessageType[]
+  massages: FullMessageType[]
 };
