@@ -126,7 +126,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         </div>
       </aside>
     </>
-   );
+  );
 }
- 
+
 export default ConversationList;

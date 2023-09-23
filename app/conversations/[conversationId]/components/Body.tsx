@@ -22,7 +22,8 @@ const Body: React.FC<BodyProps> = ({ initialMassages = [] }) => {
   const { conversationId } = useConversation();
 
   useEffect(() => {
-    axios.post(`/api/conversations/${conversationId}/seen`);
+    axios.post(`/api/conversations/${conversationId}/seen`)
+    .catch((error) => console.log(error))
   }, [conversationId]);
 
   

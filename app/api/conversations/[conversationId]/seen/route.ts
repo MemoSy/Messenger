@@ -79,7 +79,7 @@ export async function POST(
     }
 
     // Update last message seen
-    await pusherServer.trigger(conversationId!, 'message:update', updatedMessage);
+    // await pusherServer.trigger(conversationId!, 'message:update', updatedMessage);
 
     return new NextResponse('Success');
   } catch (error) {
